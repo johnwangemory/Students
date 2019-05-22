@@ -1,0 +1,60 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Students3",
+        "description": "Student object API doc",
+        "version": "1.0"
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/getStudents": {
+            "get": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "get all students",
+                "description": "get all students",
+                "operationId": "getStudentsUsingGET",
+                "responses": {
+                    "200": {
+                        "description": "Found students",
+                        "schema": {
+                            "$ref": "#/definitions/Student"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Student": {
+            "description": "Student object",
+            "type": "object",
+            "properties": {
+                "cls": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
